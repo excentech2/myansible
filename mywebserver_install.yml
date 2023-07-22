@@ -1,0 +1,9 @@
+---
+- hosts: all
+  become: yes
+  tasks: 
+   - name: "Installing Apache2 Webserver on all nodes"
+     apt: 
+      name: apache2
+      state: present
+      
