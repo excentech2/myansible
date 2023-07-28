@@ -15,7 +15,6 @@
       state: started
      when: ansible_os_family=="Debian"
 
-     tasks: 
    - name: "Install Webserver on Redhat machines"
      dnf: 
       name: httpd
