@@ -4,7 +4,7 @@
   tasks:
   - name: Uninstall Webserver from all nodes
     apt:
-      - name: apache2
-      - state: absent
+      name: apache2
+      state: absent
 
     
