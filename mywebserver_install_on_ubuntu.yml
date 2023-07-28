@@ -2,18 +2,15 @@
 # Run this playbook on UBUNTU machines only to install webserver. However my hostfile contains Amazon Linux machine Private IPs also.
 - hosts: all
   become: yes
-  tasks:
-  - name: Install Webserver on Ubuntu machines
-    apt:
-      name= apache2
-      state= present
-    when: ansible_os_family=="Debian"
+  tasks: 
+   - name: "Install Webserver on Ubuntu machines"
+     apt: 
+      name: apache2
+      state: present
+     when: ansible_os_family=="Debian"
 
-  - name: Start Webserver on Ubuntu machines
-    service:
-      name= apache2
-      state= started
-    when: ansible_os_family=="Debian"
-
-
-
+   - name: "Start Webserver on Ubuntu machines"
+     service: 
+      name: apache2
+      state: started
+     when: ansible_os_family=="Debian"
